@@ -7,23 +7,41 @@ body {
 
 h1 {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 95px;
   font-weight: bolder;
   text-transform: uppercase;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 55px; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 75px; } }
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 95px; } }
 
 h2 {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 60px;
   font-weight: bolder;
   text-transform: uppercase;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  font-size: 30px; }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 40px; } }
+  @media (min-width: 992px) {
+    h2 {
+      font-size: 60px; } }
 
 h3 {
-  font-size: 30px;
-  font-weight: 700; }
+  font-weight: 700;
+  font-size: 18px; }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 24px; } }
+  @media (min-width: 992px) {
+    h3 {
+      font-size: 30px; } }
 
 .yellow-bar:before {
   content: '';
@@ -127,13 +145,17 @@ header {
 #section-home {
   padding: 30px; }
   #section-home .hero-cta {
-    height: 100vh;
     position: absolute;
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
-    padding: 60px 0 0 0; }
+    padding: 60px 0;
+    height: calc(60vh); }
+    @media (min-height: 560px) and (min-width: 992px) {
+      #section-home .hero-cta {
+        height: 100vh;
+        padding-bottom: 0px; } }
     #section-home .hero-cta:before {
       content: '';
       position: absolute;
@@ -145,15 +167,22 @@ header {
       width: 540px;
       z-index: 0; }
     #section-home .hero-cta .cta-content {
-      position: absolute;
-      z-index: 1;
+      position: relative;
       text-align: center;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -60%); }
+      z-index: 1; }
+      @media (min-width: 768px) {
+        #section-home .hero-cta .cta-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -40%); }
+          #section-home .hero-cta .cta-content h1 {
+            white-space: nowrap; } }
+      @media (min-height: 560px) and (min-width: 992px) {
+        #section-home .hero-cta .cta-content {
+          transform: translate(-50%, -60%); } }
       #section-home .hero-cta .cta-content h1 {
-        color: white;
-        white-space: nowrap; }
+        color: white; }
       #section-home .hero-cta .cta-content .btn {
         text-transform: uppercase;
         min-width: 200px;
@@ -161,10 +190,13 @@ header {
   #section-home .hero-back {
     background-color: #e6e6e6;
     padding: 30px;
-    height: calc(100vh - 60px);
+    height: calc(60vh - 60px);
     position: relative;
     overflow: hidden;
     z-index: 1; }
+    @media (min-width: 992px) {
+      #section-home .hero-back {
+        height: calc(100vh - 60px); } }
     #section-home .hero-back video {
       position: absolute;
       top: 0;
@@ -189,8 +221,9 @@ header {
       bottom: 0;
       left: 0; }
 
-#section-about .section-content {
-  padding: 0 5rem; }
+@media (min-width: 992px) {
+  #section-about {
+    padding: 0 5rem; } }
 
 #section-schedule {
   background-color: #F8C64B;
@@ -223,7 +256,7 @@ header {
 
 #section-location {
   padding: 120px;
-  margin: 12rem 0;
+  margin: 6rem 0;
   background-color: #262626;
   background-image: url("../assets/img/btmr-map.png");
   background-size: cover;
@@ -231,6 +264,9 @@ header {
   background-repeat: no-repeat;
   color: white;
   position: relative; }
+  @media (min-width: 992px) {
+    #section-location {
+      margin: 12rem 0; } }
   #section-location p {
     color: white;
     margin-bottom: 0px; }
@@ -238,13 +274,18 @@ header {
     position: absolute;
     right: 60px;
     top: 50%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    max-width: 400px; }
+    @media (max-width: 991px) {
+      #section-location .location-images {
+        max-width: 320px; } }
     #section-location .location-images img {
       display: block;
       margin: 20px 0; }
 
-#section-attend .section-content {
-  padding: 0 5rem; }
+@media (min-width: 992px) {
+  #section-attend .section-content {
+    padding: 0 5rem; } }
 
 footer {
   background-color: #262626;

@@ -14,25 +14,49 @@ body {
 
 h1{
 	font-family: 'Fjalla One', sans-serif;
-	font-size: 95px;
 	font-weight: bolder;
 	text-transform: uppercase;
 	position: relative;
 	display: inline-block;
+	font-size: 55px;
+
+	@media (min-width: 768px){
+		font-size: 75px;
+	}
+
+	@media (min-width: 992px){
+		font-size: 95px;
+	}
 }
 
 h2{
 	font-family: 'Fjalla One', sans-serif;
-	font-size: 60px;
 	font-weight: bolder;
 	text-transform: uppercase;
 	position: relative;
 	display: inline-block;
+	font-size: 30px;
+
+	@media (min-width: 768px){
+		font-size: 40px;
+	}
+
+	@media (min-width: 992px){
+		font-size: 60px;
+	}
 }
 
 h3{
-	font-size: 30px;
 	font-weight: 700;
+	font-size: 18px;
+
+	@media (min-width: 768px){
+		font-size: 24px;
+	}
+
+	@media (min-width: 992px){
+		font-size: 30px;
+	}
 }
 
 .yellow-bar{
@@ -169,13 +193,18 @@ header{
 	padding: 30px;
 
 	.hero-cta{
-		height: 100vh;
 		position: absolute;
 		top: -30px;
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 2;
-		padding: 60px 0 0 0;
+		padding: 60px 0;
+		height: calc(60vh);
+
+		@media (min-height: 560px) and (min-width: 992px){
+			height: 100vh;
+			padding-bottom: 0px;
+		}
 
 		&:before{
 			content: '';
@@ -190,17 +219,29 @@ header{
 		}
 
 		.cta-content{
-			position: absolute;
-			z-index: 1;
+			position: relative;
 			text-align: center;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -60%);
+			z-index: 1;
+
+			@media (min-width: 768px){
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -40%);
+
+				h1{
+					white-space: nowrap;
+				}
+			}
+
+			@media (min-height: 560px) and (min-width: 992px){
+				transform: translate(-50%, -60%);
+			}
 
 			h1{
 				color: white;
-				white-space: nowrap;
 			}
+			
 
 			.btn{
 				text-transform: uppercase;
@@ -214,10 +255,14 @@ header{
 	.hero-back{
 		background-color: $light-grey;
 		padding: 30px;
-		height: calc(100vh - 60px);
+		height: calc(60vh - 60px);
 		position: relative;
 		overflow: hidden;
 		z-index: 1;
+
+		@media (min-width: 992px){
+			height: calc(100vh - 60px);
+		}
 
 		video { 
 		    position: absolute;
@@ -257,7 +302,7 @@ header{
 }
 
 #section-about{
-	.section-content{
+	@media (min-width: 992px){
 		padding: 0 5rem;
 	}
 }
@@ -307,7 +352,7 @@ header{
 
 #section-location{
 	padding: 120px;
-	margin: 12rem 0;
+	margin: 6rem 0;
 	background-color: $dark-grey;
 	background-image: url('../assets/img/btmr-map.png');
 	background-size: cover;
@@ -315,6 +360,10 @@ header{
 	background-repeat: no-repeat;
 	color: white;
 	position: relative;
+
+	@media (min-width: 992px){
+		margin: 12rem 0;
+	}
 
 	p{
 		color: white;
@@ -326,6 +375,11 @@ header{
 		right: 60px;
 		top: 50%;
 		transform: translateY(-50%);
+		max-width: 400px;
+
+		@media (max-width: 991px){
+			max-width: 320px;
+		}
 
 		img{
 			display: block;
@@ -336,7 +390,9 @@ header{
 
 #section-attend{
 	.section-content{
-		padding: 0 5rem;
+		@media (min-width: 992px){
+			padding: 0 5rem;
+		}
 	}
 }
 

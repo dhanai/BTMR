@@ -18,7 +18,7 @@ h1{
 	text-transform: uppercase;
 	position: relative;
 	display: inline-block;
-	font-size: 55px;
+	font-size: 50px;
 
 	@media (min-width: 768px){
 		font-size: 75px;
@@ -69,12 +69,16 @@ h3{
 		right: -10px;
 		height: 30%;
 		z-index: -1;
-		transform: translateY(-50%)
+		transform: translateY(-50%);
 	}
 }
 
 .yellow-bar-under{
-	margin-bottom: 33px;
+	margin-bottom: 43px;
+
+	@media (min-width: 768px){
+		margin-bottom: 63px;
+	}
 
 	&:before{
 		content: '';
@@ -82,15 +86,24 @@ h3{
 		background-color: $yellow;
 		bottom: -17px;
 		left: 0px;
-		width: 100px;
-		height: 30px;
-		margin-bottom: -20px;
+		width: 50px;
+		height: 15px;
+		margin-bottom: -10px;
 		z-index: 0;
+
+		@media (min-width: 768px){
+			width: 100px;
+			height: 30px;
+		}
 	}
 }
 
 .black-bar-under{
-	margin-bottom: 33px;
+	margin-bottom: 43px;
+
+	@media (min-width: 768px){
+		margin-bottom: 63px;
+	}
 
 	&:before{
 		content: '';
@@ -98,10 +111,15 @@ h3{
 		background-color: $dark-grey;
 		bottom: -17px;
 		left: 0px;
-		width: 100px;
-		height: 30px;
-		margin-bottom: -20px;
+		width: 50px;
+		height: 15px;
+		margin-bottom: -10px;
 		z-index: 0;
+
+		@media (min-width: 768px){
+			width: 100px;
+			height: 30px;
+		}
 	}
 }
 
@@ -112,17 +130,21 @@ p{
 }
 
 .p-block{
-	padding: 3rem 5rem;
-	position: relative;
+	padding: 1rem 0;
 
-	&:before{
-		content: '';
-		position: absolute;
-		width: 6px;
-		height: 60px;
-		border-radius: 6px;
-		background-color: $yellow;
-		margin-left: -2.5rem;
+	@media (min-width: 768px){
+		padding: 3rem 5rem;
+		position: relative;
+
+		&:before{
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 60px;
+			border-radius: 6px;
+			background-color: $yellow;
+			margin-left: -2.5rem;
+		}
 	}
 }
 
@@ -166,10 +188,20 @@ header{
 
 	.logo{
 		float: left;
+		display: none;
+
+		@media (min-width: 768px){
+			display: block;
+		}
 	}
 
 	.navigation{
 		float: right;
+		display: none;
+
+		@media (min-width: 768px){
+			display: block;
+		}
 
 		ul{
 			padding: 0;
@@ -190,16 +222,34 @@ header{
 }
 
 #section-home{
-	padding: 30px;
+	@media (max-width: 767px){
+		.row{
+			margin: 0;
+		}
+
+		.col-12{
+			padding: 0;
+		}
+	}
+
+	@media (min-width: 768px){
+		padding: 30px;
+	}
 
 	.hero-cta{
 		position: absolute;
-		top: -30px;
-		left: 50%;
-		transform: translateX(-50%);
+		top: 0;
+		left: 0;
 		z-index: 2;
-		padding: 60px 0;
-		height: calc(60vh);
+		padding: 30px;
+
+		@media (min-width: 768px){
+			top: -30px;
+			left: 50%;
+			transform: translateX(-50%);
+			height: calc(60vh);
+			padding: 60px 0;
+		}
 
 		@media (min-height: 560px) and (min-width: 992px){
 			height: 100vh;
@@ -214,8 +264,18 @@ header{
 			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 540px;
 			z-index: 0;
+			width: 50%;
+			display: none;
+
+			@media (min-width: 768px){
+				width: 480px;
+				display: block;
+			}
+
+			@media (min-width: 992px){
+				width: 540px;
+			}
 		}
 
 		.cta-content{
@@ -245,8 +305,21 @@ header{
 
 			.btn{
 				text-transform: uppercase;
-				min-width: 200px;
-				margin: 0 10px;
+				width: 100%;
+				margin-bottom: 20px;
+
+				@media (min-width: 768px){
+					max-width: 200px;
+					margin: 0 10px;
+				}
+			}
+
+			img{
+				width: 40px;
+
+				@media (min-width: 768px){
+					width: 120px;
+				}
 			}
 
 		}
@@ -254,11 +327,15 @@ header{
 
 	.hero-back{
 		background-color: $light-grey;
-		padding: 30px;
-		height: calc(60vh - 60px);
 		position: relative;
 		overflow: hidden;
 		z-index: 1;
+		height: 410px;
+
+		@media (min-width: 768px){
+			padding: 30px;
+			height: calc(60vh - 60px);
+		}
 
 		@media (min-width: 992px){
 			height: calc(100vh - 60px);
@@ -302,6 +379,8 @@ header{
 }
 
 #section-about{
+	padding: 0 2.5rem;
+
 	@media (min-width: 992px){
 		padding: 0 5rem;
 	}
@@ -351,18 +430,20 @@ header{
 }
 
 #section-location{
-	padding: 120px;
-	margin: 6rem 0;
+	padding: 30px 0;
+	margin: 3rem 0;
 	background-color: $dark-grey;
 	background-image: url('../assets/img/btmr-map.png');
-	background-size: cover;
-	background-position: -300px center;
+	background-size: 150%;
 	background-repeat: no-repeat;
 	color: white;
 	position: relative;
 
-	@media (min-width: 992px){
+	@media (min-width: 768px){
 		margin: 12rem 0;
+		padding: 120px;
+		background-size: cover;
+		background-position: -300px center;
 	}
 
 	p{
@@ -372,24 +453,33 @@ header{
 
 	.location-images{
 		position: absolute;
-		right: 60px;
+		right: 0px;
 		top: 50%;
 		transform: translateY(-50%);
-		max-width: 400px;
+		max-width: 160px;
 
-		@media (max-width: 991px){
+		@media (min-width: 768px){
 			max-width: 320px;
+			right: 60px;
+
+			img{
+				display: block;
+				margin: 20px 0;
+			}
 		}
 
-		img{
-			display: block;
-			margin: 20px 0;
+		@media (min-width: 992px){
+			max-width: 400px;
 		}
+
+		
 	}
 }
 
 #section-attend{
 	.section-content{
+		padding: 0 2.5rem;
+
 		@media (min-width: 992px){
 			padding: 0 5rem;
 		}
@@ -399,8 +489,12 @@ header{
 footer{
 	background-color: $dark-grey;
 	width: 100%;
-	padding: 30px 60px;
+	padding: 30px 15px;
 	margin-top: 6rem;
+
+	@media (min-width: 768px){
+		padding: 30px 60px;
+	}
 
 	.socials{
 		margin: 0 -10px;

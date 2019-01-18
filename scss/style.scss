@@ -394,7 +394,7 @@ header{
 	&:before{
 		content: '';
 		background-image: url('../assets/img/topograph.png');
-		background-size: 100%;
+		background-size: cover;
 		position: absolute;
 		top: 0;
 		right:  0;

@@ -213,7 +213,8 @@ header {
       font-weight: 100; }
 
 #section-speakers .speaker {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 3rem; }
   #section-speakers .speaker figure {
     background-color: #e6e6e6;
     border-radius: 1000px;

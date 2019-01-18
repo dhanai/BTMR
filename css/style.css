@@ -238,7 +238,7 @@ header {
           max-width: 200px;
           margin: 0 10px; } }
     #section-home .hero-cta .cta-content img {
-      width: 40px; }
+      width: 60px; }
       @media (min-width: 768px) {
         #section-home .hero-cta .cta-content img {
           width: 120px; } }
